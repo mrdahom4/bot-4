@@ -242,7 +242,6 @@ client.on("message", message => {
         message.react(":-:")
            message.react("-")
   const embed = new Discord.RichEmbed() 
-      .addField(" `` تم ارسال اوامر البوت في الخاص  `` ")
 	  .setColor("#ffff00")
       .setThumbnail(message.author.avatarURL)
       .setDescription(`
@@ -766,6 +765,18 @@ client.on('message', message => {
     }
 });
 
+client.on('message', message => {
+     if (message.content === "-help") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
+     
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
 
 client.on('message', message => {
   if (true) {
@@ -1189,8 +1200,7 @@ client.on("guildMemberAdd", member => {
 }); 
  
  
- const Discord = require('discord.js');
-const client = new Discord.Client();
+
  
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
